@@ -34,7 +34,7 @@ jobs:
           brew bottle gettext
 
       - name: Upload ARM bottles
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: arm-bottles
           path: "*.tar.gz"
