@@ -13,18 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Homebrew (ARM)
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $GITHUB_ENV
+      #- name: Install Homebrew (ARM)
+      #  run: |
+      #    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      #    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $GITHUB_ENV
 
-      - name: Setup brew env
-        run: |
-          eval "$(/opt/homebrew/bin/brew shellenv)"
+      #- name: Setup brew env
+      #  run: |
+      #    eval "$(/opt/homebrew/bin/brew shellenv)"
 
       - name: Build glib bottle on ARM
         run: |
-          brew update
           brew install --build-bottle glib
           brew bottle glib
 
