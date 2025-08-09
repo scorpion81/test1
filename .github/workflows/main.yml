@@ -1,3 +1,12 @@
+name: Build Homebrew Bottles (ARM)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
   build-arm:
     name: Build Bottles on ARM macOS
     runs-on: macos-latest
